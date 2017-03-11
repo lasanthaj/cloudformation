@@ -1,75 +1,37 @@
 {
-
   "AWSTemplateFormatVersion": "2010-09-09",
-
   "Description": "An Example Template",
-
   "Resources": {
-
     "WebServer": {
-
       "Type": "AWS::EC2::Instance",
-
       "Properties": {
-
         "Tags": [
-
           {
-
             "Key": "Name",
-
             "Value": {
-
               "Ref": "AWS::StackName"
-
             }
-
           },
-
           {
-
             "Key": "Version",
-
             "Value": "3"
-
           }
-
         ],
-
         "ImageId": "ami-0b33d91d",
-
         "InstanceType": "t2.micro",
-
         "KeyName": "cfn",
-
         "NetworkInterfaces": [
-
           {
-
             "AssociatePublicIpAddress": "True",
-
             "DeviceIndex": "0",
-
             "DeleteOnTermination": "True",
-
             "SubnetId": "subnet-1fa23e56",
-
             "GroupSet": [
-
               "sg-86875afb"
-
             ]
-
           }
-
         ]
-
        }
-
       }
-
     }
-
   }
-
-
