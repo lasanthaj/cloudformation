@@ -176,7 +176,8 @@
         "InstanceType": {"Ref" : "InstanceType"},
         "KeyName": {"Ref" : "KeyName"},
         "SecurityGroup" : [{"Ref" : "InstanceSecurityGroup"}]
-      },
+      }
+    },
       "InstanceSecurityGroup" : {
         "Type" : "AWS::EC2::SecurityGroup",
         "Properties" : {
@@ -189,6 +190,7 @@
             }]
 
           }
+        }
         },
 
       "Outputs" : {
@@ -212,5 +214,3 @@
         }
       }
       }
-      }
-    }
