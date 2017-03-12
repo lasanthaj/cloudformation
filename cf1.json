@@ -201,15 +201,15 @@
         "AZ" : {
 
             "Description" : "Availability Zone of the newly created EC2 instance",
-            "Value" : { "Fn::GetAtt" : [ "EC2Instance", "AvailabilityZone" ] }
+            "Value" : { "Fn::GetAtt" : [ "WebServer", "AvailabilityZone" ] }
           },
           "PublicDNS" : {
             "Description" : "Public DNSName of the newly created EC2 instance",
-            "Value" : { "Fn::GetAtt" : [ "EC2Instance", "PublicDnsName" ] }
+            "Value" : { "Fn::GetAtt" : [ "WebServer", "PublicDnsName" ] }
           },
           "PublicIP" : {
             "Description" : "Public IP address of the newly created EC2 instance",
-            "Value" : { "Fn::GetAtt" : [ "EC2Instance", "PublicIp" ] }
+            "Value" : { "Fn::GetAtt" : [ "WebServer", "PublicIp" ] }
 
         }
       }
