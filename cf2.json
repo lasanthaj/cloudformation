@@ -134,8 +134,7 @@
     "hs1.8xlarge" : { "Arch" : "NATHVM64"  },
     "cr1.8xlarge" : { "Arch" : "NATHVM64"  },
     "cc2.8xlarge" : { "Arch" : "NATHVM64"  }
-
-  },
+},
   "AWSRegionArch2AMI" : {
     "us-east-1"        : {"PV64" : "ami-2a69aa47", "HVM64" : "ami-6869aa05", "HVMG2" : "ami-bb18efad"},
     "us-west-2"        : {"PV64" : "ami-7f77b31f", "HVM64" : "ami-7172b611", "HVMG2" : "ami-31912f51"},
@@ -196,7 +195,7 @@
   },
   "AZ" : {
     "Description" : "Availability zone of newly created instance",
-    "Vaule" : {"Fn::GetAtt" : ["WebServer","AvailabilityZone"]}
+    "Value" : {"Fn::GetAtt" : ["WebServer","AvailabilityZone"]}
   },
   "PublicDNS" : {
     "Description" : "Public DNSname of the newly created EC2 Instance",
@@ -204,7 +203,7 @@
   },
   "PublicIP" : {
     "Description" : "Public IP address of the newly created instance",
-    "Value" : {"Fn::GetAtt" : ["WebServer","PublicIP"]}
+    "Value" : {"Fn::GetAtt" : ["WebServer","PublicIp"]}
   }
 }
 
