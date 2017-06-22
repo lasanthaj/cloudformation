@@ -211,7 +211,7 @@
                 "mysql-libs" : [],
                 "httpd" : [],
                 "php" : [],
-                "php-mysql" : [],
+                "php-mysql" : []
                 }
             },
             "files" : {
@@ -312,7 +312,7 @@
                   "runas=root\n"
                 ]]}
               }
-            },
+            }
             },
 
             "services" : {
@@ -320,7 +320,7 @@
                 "mysqld"  : { "enabled" : "true", "ensureRunning" : "true" },
                 "httpd"   : { "enabled" : "true", "ensureRunning" : "true" },
                 "cfn-hup" : { "enabled" : "true", "ensureRunning" : "true",
-                              "files" : ["/etc/cfn/cfn-hup.conf", "/etc/cfn/hooks.d/cfn-auto-reloader.conf"]}
+                "files" : ["/etc/cfn/cfn-hup.conf", "/etc/cfn/hooks.d/cfn-auto-reloader.conf"]}
               }
             }
           },
@@ -334,8 +334,6 @@
                 "command" : { "Fn::Join" : ["", ["mysql -u root --password='", { "Ref" : "DBRootPassword" }, "' < /tmp/setup.mysql"]]},
                 "test" : { "Fn::Join" : ["", ["$(mysql ", { "Ref" : "DBUsername" }, " -u root --password='", { "Ref" : "DBRootPassword" }, "' >/dev/null 2>&1 </dev/null); (( $? != 0 ))"]]}
               }
-            }
-          }
         }
       },
               "services" : {
@@ -343,14 +341,9 @@
                   "httpd" : {"enabled" : "true" , "ensurerunning" : "true"}
                 }
               }
-            }
-          }
+            },
 
-       }
-
-
-    },
-    "Properties" : {
+"Properties" : {
       "Tags" : [
         {
           "Key" : "Name",
@@ -392,6 +385,8 @@
       "SecurityGroups" : [{"Ref" : "InstanceSecurityGroup"}]
     }
   },
+
+
   "InstanceSecurityGroup" : {
     "Type" : "AWS::EC2::SecurityGroup",
     "Properties" : {
@@ -423,5 +418,4 @@
     "Value" : {"Fn::GetAtt" : ["WebServer","PublicIp"]}
   }
 }
-
-  }
+}
