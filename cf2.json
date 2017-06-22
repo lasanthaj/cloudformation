@@ -196,7 +196,7 @@
 "Resources" : {
   "WebServer" : {
     "Type" : "AWS::EC2::Instance",
-    "MetaData" : {
+    "Metadata" : {
        "Comment1" : "Configure bootstrap helpers to install the apache and php",
        "Comment2" : "Save web site content to /var/www/html/index.php",
        "AWS::CloudFormation::Init" : {
